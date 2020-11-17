@@ -1,55 +1,21 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
+import {useSelector,useDispatch} from 'react-redux'
+import {increment,decrement} from './actions'
 export default function App() {
+  const counter= useSelector(state=>state.counter)
+  const isLogged= useSelector(state=>state.isLogged)
+  const dispatch =useDispatch();
+
+
   return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
+    <div className="App">
+      
+      <h1>Counter {counter}</h1>
+      <button onClick={()=>dispatch(increment(5))}>+</button>
+      <button onClick={()=>dispatch(decrement())}>-</button>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
+     {isLogged ?<h3>Valuable Information I shoun see</h3>: ''}
+  
+    </div>
+  )
 }
