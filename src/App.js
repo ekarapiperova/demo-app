@@ -1,23 +1,49 @@
-import React from "react";
-import {useSelector,useDispatch} from 'react-redux'
-import {increment,decrement} from './actions'
-import NewComp from './newComponent'
-export default function App() {
-  const counter= useSelector(state=>state.counter)
-  const isLogged= useSelector(state=>state.isLogged)
-  const dispatch =useDispatch();
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from 'react-router-dom'
+import { EditPostForm } from './posts/EditFormPost';
 
+import { PostsList } from './posts/PostsList'
+import { SinglePostPage } from './posts/singlePage';
 
+function App() {
   return (
-    <div className="App">
+    <Router>
       
-      <h1>Counter {counter}</h1>
-      <button onClick={()=>dispatch(increment(5))}>+</button>
-      <button onClick={()=>dispatch(decrement())}>-</button>
-      <h1>Welcome</h1>
-      <NewComp/>
-     {isLogged ?<h3>Valuable Information I shoun see</h3>: ''}
-  
-    </div>
+      <div className="App">
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <React.Fragment>
+                <PostsList />
+              </React.Fragment>
+            )}
+          />
+           <Route
+            exact
+            path="/"
+            render={() => (
+              <React.Fragment>
+                <SinglePostPage />
+              </React.Fragment>
+            )}
+          />           
+           <Route exact path="/posts/:id" component={SinglePostPage} />
+           <Route  path="/editPost/:id" component={EditPostForm} />
+
+           
+
+          <Redirect to="/" />
+        </Switch>
+        
+      </div>
+    </Router>
   )
 }
+export default App;
