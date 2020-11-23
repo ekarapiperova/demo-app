@@ -11,7 +11,6 @@ export const EditPostForm = ({ match }) => {
   const post = useSelector(state =>
     state.find(post => post.id == id)
   )
-  console.log(post);
 
   const [title, setTitle] = useState(post.title)
   const [body, setContent] = useState(post.body)
@@ -22,10 +21,11 @@ export const EditPostForm = ({ match }) => {
   const onTitleChanged = e => setTitle(e.target.value)
   const onContentChanged = e => setContent(e.target.value)
 
+
   const onSavePostClicked = () => {
-    if (title && body) {
-    
-      dispatch(postUpdated({id:id, title: title, body }))
+    if (title && body) { 
+       // console.log(id,title,body);   
+      dispatch(postUpdated({id, title, body }))
       history.push(`/posts/${id}`)
     }
   }
