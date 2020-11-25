@@ -2,16 +2,17 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import store from '../redux/store'
-
+import { fetchUpdatePosts } from '../redux/actions'
 import { postUpdated } from './postsSlice'
 
 export const EditPostForm = ({ match }) => {
   const { id } = match.params
 
   const post = useSelector(state =>
-    state.find(post => post.id == id)
+    state.posts.find(post => post.id == id)
+   
   )
-
+  
   const [title, setTitle] = useState(post.title)
   const [body, setContent] = useState(post.body)
 
@@ -24,9 +25,12 @@ export const EditPostForm = ({ match }) => {
 
   const onSavePostClicked = () => {
     if (title && body) { 
-       // console.log(id,title,body);   
-      dispatch(postUpdated({id, title, body }))
-      history.push(`/posts/${id}`)
+      // console.log(id,title,body);  
+       let post={id,title,body}
+      // console.log(post);
+     
+      dispatch(fetchUpdatePosts(post))
+      history.push(`/`)
     }
   }
 
