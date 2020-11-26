@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import store from './redux/store'
-import { fetchPosts, fetchUpdatePosts } from './redux/actions'
+import { fetchPosts} from './redux/actions'
 //import { PostsList } from './posts/PostsList';
 import App from './App';
 

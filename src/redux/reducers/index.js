@@ -12,8 +12,9 @@ const posts = (state = INITIAL_STATE , action) => {
             let editedPost = action.payload.post;
             //console.log(editedPost);
             let postIndex = posts.findIndex(x=>x.id == editedPost.id);
-            posts.splice(postIndex,1);
-            posts.push(editedPost);
+            //posts.splice(postIndex,1);
+            posts.splice(postIndex,1,editedPost);
+            //posts.push(editedPost);
             
             return {...state, posts: posts}
         default:

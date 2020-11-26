@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Indie- Flower', cursive;
+}
+.post{
+    background-color: khaki;
+    margin: 10px;
+    padding:20px;
+}
+.posts_list h2{
+    padding: 20px 20px;
+    text-align:center;
+    font-size: 35px;
+}
+
+.buttonlink{
+   
+    color: #234465;
+    text-decoration: none;
+    padding: 4px;
+    margin-top: 1.5px;
+    border-bottom: 2px solid #234465;
+}

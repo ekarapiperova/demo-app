@@ -5,10 +5,10 @@ import {
   Route,
   Redirect
 } from 'react-router-dom'
-import { EditPostForm } from './posts/EditFormPost';
+import { EditPostForm } from './posts/EditForm/EditFormPost';
 
-import { PostsList } from './posts/PostsList'
-import { SinglePostPage } from './posts/singlePage';
+import { PostsList } from './posts/Home/PostsList'
+import { SinglePostPage } from './posts/SingleComponent/singlePage';
 
 function App() {
   return (
