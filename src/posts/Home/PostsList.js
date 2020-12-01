@@ -20,6 +20,7 @@ export const PostsList = () => {
   return (
     <section className={styles.posts_list}>
       <h2>Posts</h2>
+     
       {renderedPosts}
     </section>
   )

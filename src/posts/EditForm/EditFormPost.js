@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import store from '../../redux/store'
 import { fetchUpdatePosts } from '../../redux/actions'
 //import { postUpdated } from './postsSlice'
-
+import Header from '../../components/header/header'
 export const EditPostForm = ({ match }) => {
   const { id } = match.params
 
@@ -36,6 +36,7 @@ export const EditPostForm = ({ match }) => {
 
 
   return (
+    
     <section>
       <h2>Edit Post</h2>
       <form>

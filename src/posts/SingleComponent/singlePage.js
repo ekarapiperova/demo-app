@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import Header from '../../components/header/header'
 export const SinglePostPage = ({ match }) => {
   const {id} = match.params
   console.log(id);
@@ -20,6 +21,7 @@ export const SinglePostPage = ({ match }) => {
 
   return (
     <section>
+      <Header/>
       <article className="post">
         
       <h1>{post.id}</h1>

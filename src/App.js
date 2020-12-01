@@ -6,39 +6,26 @@ import {
   Redirect
 } from 'react-router-dom'
 import { EditPostForm } from './posts/EditForm/EditFormPost';
-
+import {SinglePostPage} from './posts/SingleComponent/singlePage'
 import { PostsList } from './posts/Home/PostsList'
-import { SinglePostPage } from './posts/SingleComponent/singlePage';
+import PostsComponent from './posts/Home/PostsComponent'
 
 function App() {
   return (
+
     <Router>
-      
+     
       <div className="App">
         <Switch>
           <Route
             exact
             path="/"
-            render={() => (
-              <React.Fragment>
-                <PostsList />
-              </React.Fragment>
-            )}
+            component={PostsComponent} 
+            
           />
-           <Route
-            exact
-            path="/"
-            render={() => (
-              <React.Fragment>
-                <SinglePostPage />
-              </React.Fragment>
-            )}
-          />           
+                              
            <Route exact path="/posts/:id" component={SinglePostPage} />
            <Route  path="/editPost/:id" component={EditPostForm} />
-
-           
-
           <Redirect to="/" />
         </Switch>
         
