@@ -1,0 +1,22 @@
+.comp{
+    display: inline;
+    padding-right:180px;
+    font-family: 'Indie- Flower', cursive;
+    text-decoration: none;
+    size: 30px;
+    color: white;
+}
+.div{
+    background-color: darkcyan;
+    margin: 5px;
+    padding:10px;
+    text-align:center;
+    
+}
+.comp a{
+
+    font-family: 'Indie- Flower', cursive;
+    text-decoration: none;
+    size: 30px;
+    color: white;
+}

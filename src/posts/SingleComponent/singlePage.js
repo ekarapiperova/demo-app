@@ -21,7 +21,7 @@ export const SinglePostPage = ({ match }) => {
 
   return (
     <section>
-      <Header/>
+     
       <article className="post">
         
       <h1>{post.id}</h1>

@@ -5,6 +5,8 @@ import store from '../../redux/store'
 import { fetchUpdatePosts } from '../../redux/actions'
 //import { postUpdated } from './postsSlice'
 import Header from '../../components/header/header'
+import styles from './edit-form.module.css'
+import { Footer } from '../../components/footer'
 export const EditPostForm = ({ match }) => {
   const { id } = match.params
 
@@ -34,12 +36,11 @@ export const EditPostForm = ({ match }) => {
     }
   }
 
-
-  return (
-    
+<Header/>
+  return (    
     <section>
       <h2>Edit Post</h2>
-      <form>
+      <form className={styles.forma}>
         <label htmlFor="postTitle"> Post Title: </label>
         
         <input
@@ -50,6 +51,7 @@ export const EditPostForm = ({ match }) => {
           value={title}
           onChange={onTitleChanged}
         />
+        <br></br>
         <label htmlFor="postContent">Content:</label>
         <textarea
           id="postContent"
@@ -63,4 +65,5 @@ export const EditPostForm = ({ match }) => {
       </button>
     </section>
   )
+ 
 }

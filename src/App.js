@@ -8,19 +8,23 @@ import {
 import { EditPostForm } from './posts/EditForm/EditFormPost';
 import {SinglePostPage} from './posts/SingleComponent/singlePage'
 import { PostsList } from './posts/Home/PostsList'
-import PostsComponent from './posts/Home/PostsComponent'
+import Posts from './posts/Home/PostsComponent'
+import  Post  from './posts/SingleComponent/SinglePostComponent';
+import Header from './components/header/header'
+import Footer from './components/footer'
+
 
 function App() {
   return (
 
     <Router>
-     
+     <Header/>
       <div className="App">
         <Switch>
           <Route
             exact
             path="/"
-            component={PostsComponent} 
+            component={PostsList} 
             
           />
                               
@@ -30,7 +34,9 @@ function App() {
         </Switch>
         
       </div>
+        <Footer/>
     </Router>
+  
   )
 }
 export default App;
